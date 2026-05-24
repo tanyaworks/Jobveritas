@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const API = "http://127.0.0.1:5001";
+const API = "https://jobveritas.onrender.com";
 
 const GaugeCircle = ({ value }) => {
   const radius = 54;
