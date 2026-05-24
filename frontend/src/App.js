@@ -104,7 +104,7 @@ export default function App() {
         * { box-sizing: border-box; }
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: #111; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; } textarea { border: none !important; outline: none !important; appearance: none !important; -webkit-appearance: none !important; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; } textarea { border: none !important; outline: none !important; }
         .glow-btn:hover { box-shadow: 0 0 20px #6366f155; transform: translateY(-1px); }
         .glow-btn { transition: all 0.2s; }
         .card:hover { border-color: #2a2a2a !important; }
@@ -191,7 +191,7 @@ export default function App() {
           ) : (
             <textarea value={text} onChange={e => setText(e.target.value)}
               placeholder="Paste the full job description here — title, company, requirements, salary..."
-              style={{ width: "100%", height: 180, background: "#111", border: "1px solid #111", borderRadius: 10, color: "#ccc", fontSize: "0.92rem", resize: "none", outline: "none", fontFamily: "inherit", lineHeight: 1.7, padding: "1rem", marginBottom: "0.75rem", overflowY: "hidden" }} />
+              style={{ width: "100%", height: 180, background: "#111", border: "1px solid #111", borderRadius: 10, color: "#ccc", fontSize: "0.92rem", resize: "none", outline: "none", fontFamily: "inherit", lineHeight: 1.7, padding: "1rem", marginBottom: "0", overflowY: "hidden" }} />
           )}
 
           <input value={companyName} onChange={e => setCompanyName(e.target.value)}
