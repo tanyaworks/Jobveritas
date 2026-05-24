@@ -104,7 +104,7 @@ export default function App() {
         * { box-sizing: border-box; }
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: #111; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; } textarea { border-bottom: none !important; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; } textarea { border: none !important; outline: none !important; }
         .glow-btn:hover { box-shadow: 0 0 20px #6366f155; transform: translateY(-1px); }
         .glow-btn { transition: all 0.2s; }
         .card:hover { border-color: #2a2a2a !important; }
