@@ -105,7 +105,7 @@ export default function App() {
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: #111; }
         ::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
-        textarea { border: none !important; outline: none !important; background: #0d0d0d !important; }
+        textarea, input { outline: none !important; box-shadow: none !important; }
         .glow-btn:hover { box-shadow: 0 0 20px #6366f155; transform: translateY(-1px); }
         .glow-btn { transition: all 0.2s; }
         .card:hover { border-color: #2a2a2a !important; }
@@ -178,7 +178,7 @@ export default function App() {
             <div style={{ display: "flex", gap: 8, marginBottom: "0.75rem" }}>
               <input value={url} onChange={e => setUrl(e.target.value)} onKeyDown={e => e.key === "Enter" && scrapeUrl()}
                 placeholder="https://linkedin.com/jobs/... or any job posting URL"
-                style={{ flex: 1, background: "#111", border: "1px solid #1e1e1e", borderRadius: 10, color: "#fff", padding: "0.7rem 1rem", fontSize: "0.9rem", outline: "none" }} />
+                style={{ flex: 1, background: "#111", border: "1px solid #1e1e1e", borderRadius: 10, color: "#fff", padding: "0.7rem 1rem", fontSize: "0.9rem" }} />
               <button onClick={scrapeUrl} disabled={scraping} className="glow-btn" style={{ padding: "0.7rem 1.4rem", background: "#6366f1", color: "#fff", border: "none", borderRadius: 10, cursor: "pointer", fontWeight: 600, fontSize: "0.9rem" }}>
                 {scraping ? "Fetching..." : "Fetch →"}
               </button>
@@ -186,12 +186,12 @@ export default function App() {
           ) : (
             <textarea value={text} onChange={e => setText(e.target.value)}
               placeholder="Paste the full job description here — title, company, requirements, salary..."
-              style={{ width: "100%", height: 180, borderRadius: 10, color: "#ccc", fontSize: "0.92rem", resize: "none", fontFamily: "inherit", lineHeight: 1.7, padding: "1rem", marginBottom: "0.75rem", display: "block" }} />
+              style={{ width: "100%", height: 180, background: "#111", border: "1px solid #1e1e1e", borderRadius: 10, color: "#ccc", fontSize: "0.92rem", resize: "none", fontFamily: "inherit", lineHeight: 1.7, padding: "1rem", marginBottom: "0.75rem", display: "block" }} />
           )}
 
           <input value={companyName} onChange={e => setCompanyName(e.target.value)}
             placeholder="🏢 Company name (optional — enables web verification)"
-            style={{ width: "100%", background: "#111", border: "1px solid #1e1e1e", borderRadius: 10, color: "#aaa", padding: "0.65rem 1rem", fontSize: "0.85rem", outline: "none" }} />
+            style={{ width: "100%", background: "#111", border: "1px solid #1e1e1e", borderRadius: 10, color: "#aaa", padding: "0.65rem 1rem", fontSize: "0.85rem" }} />
 
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "1.25rem" }}>
             <span style={{ fontSize: "0.78rem", color: "#2a2a2a" }}>{text.length > 0 ? `${text.length} chars` : "No input yet"}</span>
