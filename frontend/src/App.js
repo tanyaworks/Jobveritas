@@ -105,7 +105,7 @@ export default function App() {
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: #111; }
         ::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
-        textarea, input { outline: none !important; box-shadow: none !important; }
+        textarea, input { outline: 0 !important; box-shadow: none !important; border: none !important; } textarea { border: 1px solid #1e1e1e !important; background: #111 !important; } input { border: 1px solid #1e1e1e !important; background: #111 !important; }
         .glow-btn:hover { box-shadow: 0 0 20px #6366f155; transform: translateY(-1px); }
         .glow-btn { transition: all 0.2s; }
         .card:hover { border-color: #2a2a2a !important; }
