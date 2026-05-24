@@ -101,7 +101,7 @@ export default function App() {
     <div style={{ minHeight: "100vh", background: "#060606", color: "#fff", fontFamily: "'Inter', sans-serif" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-        * { box-sizing: border-box; }
+        * { box-sizing: border-box; margin: 0; padding: 0; } textarea:focus { outline: 0 !important; border: 1px solid #6366f1 !important; box-shadow: none !important; } textarea { border: 1px solid #1e1e1e !important; } input:focus { outline: 0 !important; border: 1px solid #6366f1 !important; box-shadow: none !important; }
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: #111; }
         ::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
