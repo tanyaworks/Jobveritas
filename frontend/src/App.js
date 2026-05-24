@@ -191,7 +191,7 @@ export default function App() {
           ) : (
             <textarea value={text} onChange={e => setText(e.target.value)}
               placeholder="Paste the full job description here — title, company, requirements, salary..."
-              style={{ width: "100%", height: 180, background: "#0d0d0d", border: "none", borderRadius: 10, color: "#ccc", fontSize: "0.92rem", resize: "none", outline: "none", fontFamily: "inherit", lineHeight: 1.7, padding: "1rem", marginBottom: "0.73rem", overflowY: "hidden" }} />
+              style={{ width: "100%", height: 180, background: "#0d0d0d", border: "none", borderRadius: "10px 10px 0 0", color: "#ccc", fontSize: "0.92rem", resize: "none", outline: "none", fontFamily: "inherit", lineHeight: 1.7, padding: "1rem", marginBottom: 0, overflowY: "hidden" }} />
           )}
 
           <input value={companyName} onChange={e => setCompanyName(e.target.value)}
