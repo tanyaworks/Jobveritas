@@ -104,14 +104,14 @@ export default function App() {
         * { box-sizing: border-box; }
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: #111; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; } textarea { border: none !important; outline: none !important; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+        textarea { border: none !important; outline: none !important; background: #0d0d0d !important; }
         .glow-btn:hover { box-shadow: 0 0 20px #6366f155; transform: translateY(-1px); }
         .glow-btn { transition: all 0.2s; }
         .card:hover { border-color: #2a2a2a !important; }
         .card { transition: border-color 0.2s; }
       `}</style>
 
-      {/* Header */}
       <div style={{ borderBottom: "1px solid #111", padding: "1rem 2.5rem", display: "flex", alignItems: "center", justifyContent: "space-between", position: "sticky", top: 0, zIndex: 100, background: "#060606ee" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
           <div style={{ width: 32, height: 32, background: "linear-gradient(135deg, #6366f1, #8b5cf6)", borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16, boxShadow: "0 0 12px #6366f155" }}>🔍</div>
@@ -132,7 +132,6 @@ export default function App() {
         </div>
       </div>
 
-      {/* Fixed History Sidebar */}
       {showHistory && (
         <div style={{ position: "fixed", top: 65, right: 0, width: 260, bottom: 0, background: "#080808", borderLeft: "1px solid #141414", padding: "1.25rem", overflowY: "auto", zIndex: 99 }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.25rem" }}>
@@ -155,10 +154,7 @@ export default function App() {
         </div>
       )}
 
-      {/* Main Content */}
       <div style={{ maxWidth: 860, margin: "0 auto", padding: "4rem 2rem", transition: "margin-right 0.2s", marginRight: showHistory ? "260px" : "auto" }}>
-
-        {/* Hero */}
         <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
           <div style={{ display: "inline-block", background: "#0f0f0f", border: "1px solid #1e1e1e", borderRadius: 20, padding: "4px 14px", fontSize: "0.75rem", color: "#6366f1", marginBottom: "1.5rem", fontWeight: 500 }}>
             ✦ Ensemble ML — Random Forest + Logistic Regression
@@ -171,7 +167,6 @@ export default function App() {
           </p>
         </div>
 
-        {/* Input */}
         <div style={{ background: "#0d0d0d", border: "1px solid #1a1a1a", borderRadius: 20, padding: "1.75rem", marginBottom: "1rem" }}>
           <div style={{ display: "flex", gap: 6, marginBottom: "1.25rem", background: "#111", borderRadius: 10, padding: 4, width: "fit-content" }}>
             {[["text", "📋 Paste Text"], ["url", "🔗 From URL"]].map(([m, label]) => (
@@ -191,7 +186,7 @@ export default function App() {
           ) : (
             <textarea value={text} onChange={e => setText(e.target.value)}
               placeholder="Paste the full job description here — title, company, requirements, salary..."
-              style={{ width: "100%", height: 180, background: "#0d0d0d", border: "none", borderRadius: "10px 10px 0 0", color: "#ccc", fontSize: "0.92rem", resize: "none", outline: "none", fontFamily: "inherit", lineHeight: 1.7, padding: "1rem", marginBottom: 0, overflowY: "hidden" }} />
+              style={{ width: "100%", height: 180, borderRadius: 10, color: "#ccc", fontSize: "0.92rem", resize: "none", fontFamily: "inherit", lineHeight: 1.7, padding: "1rem", marginBottom: "0.75rem", display: "block" }} />
           )}
 
           <input value={companyName} onChange={e => setCompanyName(e.target.value)}
@@ -206,11 +201,8 @@ export default function App() {
           </div>
         </div>
 
-        {/* Results */}
         {result && (
           <div style={{ marginTop: "2.5rem" }}>
-
-            {/* Verdict */}
             <div style={{ background: vb[result.color], border: `1px solid ${vc[result.color]}44`, borderRadius: 20, padding: "2rem 2.5rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1.5rem", marginBottom: "1.5rem", boxShadow: `0 0 40px ${vc[result.color]}11` }}>
               <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
                 <div style={{ width: 60, height: 60, borderRadius: "50%", background: `${vc[result.color]}15`, border: `2px solid ${vc[result.color]}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.6rem", color: vc[result.color], fontWeight: 800, boxShadow: `0 0 20px ${vc[result.color]}33` }}>
@@ -231,14 +223,12 @@ export default function App() {
               <GaugeCircle value={result.fake_probability} />
             </div>
 
-            {/* Tabs */}
             <div style={{ display: "flex", gap: 2, marginBottom: "1.25rem", background: "#0d0d0d", border: "1px solid #1a1a1a", borderRadius: 12, padding: 4, width: "fit-content" }}>
               {[["overview", "Overview"], ["highlights", "Highlights"], ["share", "Share"]].map(([tab, label]) => (
                 <button key={tab} onClick={() => setActiveTab(tab)} style={{ padding: "0.4rem 1.1rem", borderRadius: 8, border: "none", background: activeTab === tab ? "#1a1a1a" : "transparent", color: activeTab === tab ? "#fff" : "#444", cursor: "pointer", fontSize: "0.82rem", fontWeight: activeTab === tab ? 600 : 400, transition: "all 0.15s" }}>{label}</button>
               ))}
             </div>
 
-            {/* Overview */}
             {activeTab === "overview" && (
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
                 <div className="card" style={{ background: "#0d0d0d", border: "1px solid #1a1a1a", borderRadius: 16, padding: "1.5rem" }}>
@@ -295,7 +285,6 @@ export default function App() {
               </div>
             )}
 
-            {/* Highlights */}
             {activeTab === "highlights" && (
               <div className="card" style={{ background: "#0d0d0d", border: "1px solid #1a1a1a", borderRadius: 16, padding: "1.5rem" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: "1rem" }}>
@@ -307,7 +296,6 @@ export default function App() {
               </div>
             )}
 
-            {/* Share */}
             {activeTab === "share" && (
               <div style={{ background: "#0d0d0d", border: "1px solid #1a1a1a", borderRadius: 16, padding: "1.5rem" }}>
                 <p style={{ color: "#444", fontSize: "0.82rem", margin: "0 0 1rem" }}>Shareable result card</p>
@@ -334,7 +322,6 @@ export default function App() {
                 </button>
               </div>
             )}
-
           </div>
         )}
       </div>
